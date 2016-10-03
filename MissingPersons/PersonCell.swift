@@ -15,13 +15,13 @@ class PersonCell: UICollectionViewCell {
         
     }
     
-    func downloadImage(url: NSURL) {
+    func downloadImage(url: URL) {
         
     }
     
-    func getDataFromUrl(url: NSURL, completion: @escaping ((_ data: NSData?, _ response: URLResponse?, _ error: NSError?) -> Void)) {
-        URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
-            completion(_: data as NSData?, response, error as NSError?)
+    func getData(from url: URL, completion: @escaping ((_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void)) {
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            completion(_: data, response, error)
             }.resume()
     }
 }
