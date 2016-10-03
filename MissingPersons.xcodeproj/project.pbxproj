@@ -26,6 +26,7 @@
 		927BF8361DA2EA07004D413A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		927BF8381DA2EA07004D413A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		927BF83E1DA2F2B5004D413A /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		92D8FA361DA304F300C4AE0A /* MissingPersons-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MissingPersons-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1799F17F4441755E3A2EFB1 /* Pods-MissingPersons.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPersons.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MissingPersons/Pods-MissingPersons.debug.xcconfig"; sourceTree = "<group>"; };
 		B2B8C800E5B0CE838A772B5C /* Pods-MissingPersons.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPersons.release.xcconfig"; path = "Pods/Target Support Files/Pods-MissingPersons/Pods-MissingPersons.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +88,7 @@
 				927BF8351DA2EA07004D413A /* LaunchScreen.storyboard */,
 				927BF8381DA2EA07004D413A /* Info.plist */,
 				927BF83E1DA2F2B5004D413A /* PersonCell.swift */,
+				92D8FA361DA304F300C4AE0A /* MissingPersons-Bridging-Header.h */,
 			);
 			path = MissingPersons;
 			sourceTree = "<group>";
@@ -126,6 +128,7 @@
 				TargetAttributes = {
 					927BF8281DA2EA07004D413A = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -338,10 +341,13 @@
 			baseConfigurationReference = A1799F17F4441755E3A2EFB1 /* Pods-MissingPersons.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MissingPersons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Whitaker.Anthony.MissingPersons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MissingPersons/MissingPersons-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -351,10 +357,12 @@
 			baseConfigurationReference = B2B8C800E5B0CE838A772B5C /* Pods-MissingPersons.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MissingPersons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Whitaker.Anthony.MissingPersons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MissingPersons/MissingPersons-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

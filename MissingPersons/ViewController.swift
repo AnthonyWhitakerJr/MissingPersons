@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProjectOxfordFace
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
