@@ -13,6 +13,8 @@
 		927BF8341DA2EA07004D413A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927BF8331DA2EA07004D413A /* Assets.xcassets */; };
 		927BF8371DA2EA07004D413A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927BF8351DA2EA07004D413A /* LaunchScreen.storyboard */; };
 		927BF83F1DA2F2B5004D413A /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927BF83E1DA2F2B5004D413A /* PersonCell.swift */; };
+		92D8FA3A1DA305DD00C4AE0A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8FA391DA305DD00C4AE0A /* Person.swift */; };
+		92D8FA3C1DA306AA00C4AE0A /* FaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8FA3B1DA306AA00C4AE0A /* FaceService.swift */; };
 		B1A7EB45BD817B4D2F079799 /* Pods_MissingPersons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB439412D5FE375FFDC71C0 /* Pods_MissingPersons.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		927BF8381DA2EA07004D413A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		927BF83E1DA2F2B5004D413A /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		92D8FA361DA304F300C4AE0A /* MissingPersons-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MissingPersons-Bridging-Header.h"; sourceTree = "<group>"; };
+		92D8FA391DA305DD00C4AE0A /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		92D8FA3B1DA306AA00C4AE0A /* FaceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceService.swift; sourceTree = "<group>"; };
 		A1799F17F4441755E3A2EFB1 /* Pods-MissingPersons.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPersons.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MissingPersons/Pods-MissingPersons.debug.xcconfig"; sourceTree = "<group>"; };
 		B2B8C800E5B0CE838A772B5C /* Pods-MissingPersons.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPersons.release.xcconfig"; path = "Pods/Target Support Files/Pods-MissingPersons/Pods-MissingPersons.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,16 +85,26 @@
 		927BF82B1DA2EA07004D413A /* MissingPersons */ = {
 			isa = PBXGroup;
 			children = (
+				92D8FA3D1DA306B000C4AE0A /* Model */,
 				927BF82C1DA2EA07004D413A /* AppDelegate.swift */,
 				927BF82E1DA2EA07004D413A /* ViewController.swift */,
 				927BF8301DA2EA07004D413A /* Main.storyboard */,
 				927BF8331DA2EA07004D413A /* Assets.xcassets */,
 				927BF8351DA2EA07004D413A /* LaunchScreen.storyboard */,
 				927BF8381DA2EA07004D413A /* Info.plist */,
-				927BF83E1DA2F2B5004D413A /* PersonCell.swift */,
 				92D8FA361DA304F300C4AE0A /* MissingPersons-Bridging-Header.h */,
 			);
 			path = MissingPersons;
+			sourceTree = "<group>";
+		};
+		92D8FA3D1DA306B000C4AE0A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				927BF83E1DA2F2B5004D413A /* PersonCell.swift */,
+				92D8FA391DA305DD00C4AE0A /* Person.swift */,
+				92D8FA3B1DA306AA00C4AE0A /* FaceService.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,8 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D8FA3C1DA306AA00C4AE0A /* FaceService.swift in Sources */,
 				927BF83F1DA2F2B5004D413A /* PersonCell.swift in Sources */,
 				927BF82F1DA2EA07004D413A /* ViewController.swift in Sources */,
+				92D8FA3A1DA305DD00C4AE0A /* Person.swift in Sources */,
 				927BF82D1DA2EA07004D413A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +279,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -312,6 +329,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

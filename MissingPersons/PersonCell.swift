@@ -10,18 +10,20 @@ import UIKit
 
 class PersonCell: UICollectionViewCell {
     @IBOutlet weak var personImage: UIImageView!
+    var person: Person!
     
-    func configureCell(imageUrl: String) {
-        if let url = URL(string: imageUrl) {
-            downloadImage(url: url)
-        }
+    func configureCell(person: Person) {
+        self.person = person
+        downloadImage(url: person.personImageUrl)
     }
     
     func downloadImage(url: URL) {
         getData(from: url) { (data, response, error) in
-            DispatchQueue.main.async(execute: { 
+            DispatchQueue.main.async(execute: {
                 guard let data = data, error == nil else {return}
                 self.personImage.image = UIImage(data: data)
+                self.person.personImage = self.personImage.image
+                self.person.downloadFaceId()
             })
         }
     }

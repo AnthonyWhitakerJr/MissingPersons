@@ -10,22 +10,21 @@ import UIKit
 import ProjectOxfordFace
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var selectedImage: UIImageView!
     
     let imagePicker = UIImagePickerController()
-    
-    let baseURL = "http://localHost:6069/img/"
+        
     let missingPeople = [
-    "person1.jpg",
-    "person2.jpg",
-    "person3.jpg",
-    "person4.jpg",
-    "person5.jpg",
-    "person6.png",
+        Person(personImageUrl: "person1.jpg"),
+        Person(personImageUrl: "person2.jpg"),
+        Person(personImageUrl: "person3.jpg"),
+        Person(personImageUrl: "person4.jpg"),
+        Person(personImageUrl: "person5.jpg"),
+        Person(personImageUrl: "person6.png"),
     ]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,8 +36,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         tap.numberOfTapsRequired = 1
         selectedImage.addGestureRecognizer(tap)
     }
-
-
+    
+    
     @IBAction func checkForMatchPressed(_ sender: AnyObject) {
     }
     
@@ -48,8 +47,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PersonCell", for: indexPath) as! PersonCell
-        let url = "\(baseURL)\(missingPeople[indexPath.row])"
-        cell.configureCell(imageUrl: url)
+        let person = missingPeople[indexPath.row]
+        cell.configureCell(person: person)
         return cell
     }
     
