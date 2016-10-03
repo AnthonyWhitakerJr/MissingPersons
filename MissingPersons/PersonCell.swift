@@ -19,9 +19,9 @@ class PersonCell: UICollectionViewCell {
         
     }
     
-    func getDataFromUrl(url: NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError?) -> Void)) {
-        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-            completion(data: data, response: response, error: error)
-        }.resume()
+    func getDataFromUrl(url: NSURL, completion: @escaping ((_ data: NSData?, _ response: URLResponse?, _ error: NSError?) -> Void)) {
+        URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
+            completion(_: data as NSData?, response, error as NSError?)
+            }.resume()
     }
 }
