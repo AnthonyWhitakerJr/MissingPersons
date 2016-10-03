@@ -64,6 +64,9 @@
                                             <constraint firstAttribute="trailing" secondItem="GWj-1D-f6f" secondAttribute="trailing" id="RF6-19-hVF"/>
                                             <constraint firstAttribute="bottom" secondItem="GWj-1D-f6f" secondAttribute="bottom" id="e6E-cB-emy"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="personImage" destination="GWj-1D-f6f" id="dCH-su-hLb"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

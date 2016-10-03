@@ -9,5 +9,19 @@
 import UIKit
 
 class PersonCell: UICollectionViewCell {
+    @IBOutlet weak var personImage: UIImageView!
     
+    func configureCell(imageUrl: String) {
+        
+    }
+    
+    func downloadImage(url: NSURL) {
+        
+    }
+    
+    func getDataFromUrl(url: NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError?) -> Void)) {
+        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            completion(data: data, response: response, error: error)
+        }.resume()
+    }
 }
