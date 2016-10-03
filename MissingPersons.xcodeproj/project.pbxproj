@@ -13,9 +13,11 @@
 		927BF8341DA2EA07004D413A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927BF8331DA2EA07004D413A /* Assets.xcassets */; };
 		927BF8371DA2EA07004D413A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927BF8351DA2EA07004D413A /* LaunchScreen.storyboard */; };
 		927BF83F1DA2F2B5004D413A /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927BF83E1DA2F2B5004D413A /* PersonCell.swift */; };
+		B1A7EB45BD817B4D2F079799 /* Pods_MissingPersons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB439412D5FE375FFDC71C0 /* Pods_MissingPersons.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CB439412D5FE375FFDC71C0 /* Pods_MissingPersons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MissingPersons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		927BF8291DA2EA07004D413A /* MissingPersons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissingPersons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		927BF82C1DA2EA07004D413A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		927BF82E1DA2EA07004D413A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		927BF8361DA2EA07004D413A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		927BF8381DA2EA07004D413A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		927BF83E1DA2F2B5004D413A /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		A1799F17F4441755E3A2EFB1 /* Pods-MissingPersons.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPersons.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MissingPersons/Pods-MissingPersons.debug.xcconfig"; sourceTree = "<group>"; };
+		B2B8C800E5B0CE838A772B5C /* Pods-MissingPersons.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPersons.release.xcconfig"; path = "Pods/Target Support Files/Pods-MissingPersons/Pods-MissingPersons.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1A7EB45BD817B4D2F079799 /* Pods_MissingPersons.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DD47CD9933F5C9BDFDE4391 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0CB439412D5FE375FFDC71C0 /* Pods_MissingPersons.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1566C1B58B07969C50666318 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1799F17F4441755E3A2EFB1 /* Pods-MissingPersons.debug.xcconfig */,
+				B2B8C800E5B0CE838A772B5C /* Pods-MissingPersons.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		927BF8201DA2EA07004D413A = {
 			isa = PBXGroup;
 			children = (
 				927BF82B1DA2EA07004D413A /* MissingPersons */,
 				927BF82A1DA2EA07004D413A /* Products */,
+				1566C1B58B07969C50666318 /* Pods */,
+				0DD47CD9933F5C9BDFDE4391 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 927BF83B1DA2EA07004D413A /* Build configuration list for PBXNativeTarget "MissingPersons" */;
 			buildPhases = (
+				C0744765CCB410843A95CEB9 /* [CP] Check Pods Manifest.lock */,
 				927BF8251DA2EA07004D413A /* Sources */,
 				927BF8261DA2EA07004D413A /* Frameworks */,
 				927BF8271DA2EA07004D413A /* Resources */,
+				D78015EFC49F5DBD4B89D127 /* [CP] Embed Pods Frameworks */,
+				87E64366D54D48D8E34A0900 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		87E64366D54D48D8E34A0900 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MissingPersons/Pods-MissingPersons-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0744765CCB410843A95CEB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D78015EFC49F5DBD4B89D127 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MissingPersons/Pods-MissingPersons-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		927BF8251DA2EA07004D413A /* Sources */ = {
@@ -260,6 +335,7 @@
 		};
 		927BF83C1DA2EA07004D413A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1799F17F4441755E3A2EFB1 /* Pods-MissingPersons.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MissingPersons/Info.plist;
@@ -272,6 +348,7 @@
 		};
 		927BF83D1DA2EA07004D413A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2B8C800E5B0CE838A772B5C /* Pods-MissingPersons.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MissingPersons/Info.plist;
@@ -301,6 +378,7 @@
 				927BF83D1DA2EA07004D413A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
