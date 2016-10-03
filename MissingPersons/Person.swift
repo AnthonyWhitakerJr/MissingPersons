@@ -22,6 +22,8 @@ class Person {
     }
     
     func downloadFaceId() {
+        if self.faceId != nil { return }
+        
         if let img = personImage, let imgData = UIImageJPEGRepresentation(img, 0.8) {
             FaceService.instance.client?.detect(with: imgData, returnFaceId: true, returnFaceLandmarks: false, returnFaceAttributes: nil, completionBlock: { (faces:[MPOFace]?, err:Error?) in
                 if err == nil {

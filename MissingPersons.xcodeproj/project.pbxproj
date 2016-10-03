@@ -85,12 +85,11 @@
 		927BF82B1DA2EA07004D413A /* MissingPersons */ = {
 			isa = PBXGroup;
 			children = (
-				92D8FA3D1DA306B000C4AE0A /* Model */,
 				927BF82C1DA2EA07004D413A /* AppDelegate.swift */,
-				927BF82E1DA2EA07004D413A /* ViewController.swift */,
-				927BF8301DA2EA07004D413A /* Main.storyboard */,
+				92D8FA3E1DA3109000C4AE0A /* Controller */,
+				92D8FA3D1DA306B000C4AE0A /* Model */,
+				92D8FA3F1DA310AB00C4AE0A /* View */,
 				927BF8331DA2EA07004D413A /* Assets.xcassets */,
-				927BF8351DA2EA07004D413A /* LaunchScreen.storyboard */,
 				927BF8381DA2EA07004D413A /* Info.plist */,
 				92D8FA361DA304F300C4AE0A /* MissingPersons-Bridging-Header.h */,
 			);
@@ -105,6 +104,23 @@
 				92D8FA3B1DA306AA00C4AE0A /* FaceService.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		92D8FA3E1DA3109000C4AE0A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				927BF82E1DA2EA07004D413A /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		92D8FA3F1DA310AB00C4AE0A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				927BF8301DA2EA07004D413A /* Main.storyboard */,
+				927BF8351DA2EA07004D413A /* LaunchScreen.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

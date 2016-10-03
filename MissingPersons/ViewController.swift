@@ -15,6 +15,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var selectedImage: UIImageView!
     
     let imagePicker = UIImagePickerController()
+    var selectedPerson: Person?
         
     let missingPeople = [
         Person(personImageUrl: "person1.jpg"),
@@ -50,6 +51,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let person = missingPeople[indexPath.row]
         cell.configureCell(person: person)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedPerson = missingPeople[indexPath.row]
+        let cell = collectionView.cellForItem(at: indexPath) as! PersonCell
+        cell.setSelected()
+        print(cell.person.personImageUrl)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
