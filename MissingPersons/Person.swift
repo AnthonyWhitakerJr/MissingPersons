@@ -15,14 +15,16 @@ class Person {
 
     var faceId: String?
     var personImage: UIImage?
-    var personImageUrl: URL!
+    var personImageUrl: URL?
+    
+    init() {}
     
     init(personImageUrl: String) {
         self.personImageUrl = URL(string: "\(Person.baseURL)\(personImageUrl)")
     }
     
     func downloadFaceId() {
-        if self.faceId != nil { return }
+        guard self.faceId == nil else { return }
         
         if let img = personImage, let imgData = UIImageJPEGRepresentation(img, 0.8) {
             FaceService.instance.client?.detect(with: imgData, returnFaceId: true, returnFaceLandmarks: false, returnFaceAttributes: nil, completionBlock: { (faces:[MPOFace]?, err:Error?) in

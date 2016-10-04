@@ -14,7 +14,9 @@ class PersonCell: UICollectionViewCell {
     
     func configureCell(person: Person) {
         self.person = person
-        downloadImage(url: person.personImageUrl)
+        if let url = person.personImageUrl {
+            downloadImage(url: url)
+        }
     }
     
     func downloadImage(url: URL) {

@@ -70,7 +70,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="6OS-uK-f6b">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6OS-uK-f6b">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="138" id="doX-oe-nIn"/>
                                     <constraint firstAttribute="height" constant="138" id="xEr-R7-ncI"/>
@@ -115,7 +115,4 @@
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Profile" width="540" height="540"/>
-    </resources>
 </document>

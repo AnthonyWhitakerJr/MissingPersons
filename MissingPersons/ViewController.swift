@@ -15,7 +15,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var selectedImage: UIImageView!
     
     let imagePicker = UIImagePickerController()
-    var selectedPerson: Person?
+    let defaultImage: UIImage = #imageLiteral(resourceName: "Profile")
+    var selectedMissingPerson: Person?
+    var selectedPhotoPerson: Person!
         
     let missingPeople = [
         Person(personImageUrl: "person1.jpg"),
@@ -36,10 +38,56 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let tap = UITapGestureRecognizer(target: self, action: #selector(loadPicker(gesture:)))
         tap.numberOfTapsRequired = 1
         selectedImage.addGestureRecognizer(tap)
+        
+        selectedPhotoPerson = Person()
+        updateSelectedPhoto(image: defaultImage)
     }
     
+    func updateSelectedPhoto(image: UIImage) {
+        selectedPhotoPerson?.personImage = image
+        selectedImage.image = image
+        selectedPhotoPerson.faceId = nil
+    }
+    
+    func showErrorAlert(){
+        let alert = UIAlertController(title: "Select Person & Image", message: "Please select a missing person to check and an image from your photos.", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func checkForMatchPressed(_ sender: AnyObject) {
+        if selectedMissingPerson == nil || selectedPhotoPerson.personImage == defaultImage {
+            showErrorAlert()
+        } else {
+            if let myImg = selectedImage.image, let imgData = UIImageJPEGRepresentation(myImg, 0.8) {
+                FaceService.instance.client?.detect(with: imgData, returnFaceId: true, returnFaceLandmarks: false, returnFaceAttributes: nil, completionBlock: { (faces: [MPOFace]?, err: Error?) in
+                    if err == nil {
+                        var faceId: String?
+                        for face in faces! {
+                            faceId = face.faceId
+                            self.selectedPhotoPerson.faceId = faceId
+                            break
+                        }
+                        
+                        if faceId != nil {
+                            FaceService.instance.client?.verify(withFirstFaceId: self.selectedMissingPerson!.faceId, faceId2: faceId, completionBlock: { (result: MPOVerifyResult?, err: Error?) in
+                                if err == nil {
+                                print(result?.confidence)
+                                print(result?.isIdentical)
+                                print(result.debugDescription)
+                                } else {
+                                    print(err.debugDescription)
+                                }
+                            })
+                        }
+                    } else {
+                        print(err.debugDescription)
+                    }
+                })
+            }
+        }
+        print("END")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -54,15 +102,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.selectedPerson = missingPeople[indexPath.row]
+        self.selectedMissingPerson = missingPeople[indexPath.row]
         let cell = collectionView.cellForItem(at: indexPath) as! PersonCell
         cell.setSelected()
-        print(cell.person.personImageUrl)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            selectedImage.image = pickedImage
+            updateSelectedPhoto(image: pickedImage)
         }
         dismiss(animated: true, completion: nil)
     }
